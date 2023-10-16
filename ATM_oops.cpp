@@ -26,6 +26,10 @@ public:
     }
 
     // Method Overloading: Different parameter lists
+    /*In this application method overloading is used for withdraw method. Initially withdraw method accepts input
+    of type int. To allow transactions of large amounts int as a parameter is not supported. Thus method overloading
+    is performed on the same method to allow transactions of large amounts*/
+
     virtual void withdraw(double amount) {
         if (amount <= balance) {
             balance -= amount;
@@ -203,6 +207,19 @@ int main() {
                 cout << "Invalid choice. Try again.\n";
         }
     }
-
     return 0;
 }
+
+/*
+**Inheritance and Polymorphism -> compile-time, run-time, virtual(keyword)**
+Account testAccount = new Account(); -> Possible: base class obj pointing to base class
+PremiumAccount testAccount = new PremiumAccount(); -> Possible: derived class obj pointing to derived class
+Account testAccount = new PremiumAccount(); -> Possible: base class obj pointing to derived class
+PremiumAccount testAccount = new Account(); -> NotPossible: vice-versa not possible!
+
+**Method Overloading(no. & type of parameters), Method Overriding(when derived class inherits properties and
+functions from base class it overwrites the functions from base class)**
+
+**Encapsulation**
+Clubbing of data 
+*/
